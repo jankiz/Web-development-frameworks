@@ -1,0 +1,12 @@
+<div class="container">
+  <input type="text" [(ngModel)]="category">
+</div>
+
+<div [ngSwitch]="category">
+  <div *ngSwitchCase="'movie'" class="container">
+    <app-movie-card *ngFor="let item of movies" [movie]="item" appOnHover></app-movie-card>
+  </div>
+  <div *ngSwitchDefault class="container">
+    <app-splash-screen></app-splash-screen>
+  </div>
+</div>

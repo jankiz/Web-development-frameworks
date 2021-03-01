@@ -1,0 +1,11 @@
+<mat-card *ngIf="movie">
+  <mat-card-header>
+    <mat-card-title>{{movie.title}}</mat-card-title>
+    <mat-card-subtitle *ngIf="movie.lengthMin">({{ + movie.lengthMin}}p)</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="movie.img" [alt]="movie.title">
+  <mat-card-content>
+    <p>{{movie.description}}</p>
+    <div [style.backgroundColor]="movie.imdb > 8.3 ? 'magenta': 'red'" class="imdb">{{movie.imdb}}</div>
+  </mat-card-content>
+</mat-card>

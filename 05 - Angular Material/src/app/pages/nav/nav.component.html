@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <a mat-button>
+      Webkert
+    </a>
+    <button mat-button *ngFor="let item of categories">
+      {{item.title}}&nbsp;
+      <mat-icon>{{item.icon}}</mat-icon>
+    </button>
+    <span style="flex: 1 1;"></span>
+    <button mat-button [matMenuTriggerFor]="menu">
+      Lakatos Merlon&nbsp;
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item disabled>
+        <mat-icon>person</mat-icon>
+        <span>Profil</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>settings</mat-icon>
+        <span>Beállítások</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>arrow_back</mat-icon>
+        <span>Kijelentkezés</span>
+      </button>
+    </mat-menu>
+
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <span class="splash-title">{{sCategoryTitle}}</span>
+  </mat-toolbar-row>
+
+</mat-toolbar>

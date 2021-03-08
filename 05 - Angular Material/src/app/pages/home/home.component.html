@@ -1,0 +1,35 @@
+<span [ngSwitch]="page">
+
+  <span *ngSwitchCase="'home'">
+    <app-nav [categories]="categories"></app-nav>
+    <span [ngSwitch]="category">
+      <span *ngSwitchCase="'movie'" class="container">
+        <app-movie-card *ngFor="let item of movies" [movie]="item" appOnHover></app-movie-card>
+      </span>
+      <span *ngSwitchCase="'game'" class="container">
+        <app-game-card *ngFor="let item of games" [game]="item" appOnHover></app-game-card>
+        <button mat-fab class="action-btn" (click)="openDialog()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </span>
+      <span *ngSwitchCase="'favorite'" class="container">
+        <app-favorite-card></app-favorite-card>
+      </span>
+      <span *ngSwitchDefault class="container">
+        <app-splash-screen [categories]="categories"></app-splash-screen>
+      </span>
+    </span>
+  </span>
+
+  <span *ngSwitchCase="'registration'">
+    <app-registration></app-registration>
+  </span>
+
+  <span *ngSwitchCase="'details'">
+    <app-details></app-details>
+  </span>
+
+  <span *ngSwitchDefault>
+    <app-login></app-login>
+  </span>
+</span>

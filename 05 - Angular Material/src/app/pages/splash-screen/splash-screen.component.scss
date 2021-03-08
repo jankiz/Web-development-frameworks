@@ -1,0 +1,23 @@
+h1 {
+  text-align: center;
+}
+
+.splash-category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.splash-category mat-card {
+  flex: 1;
+  min-width: 200px;
+  min-height: 200px;
+  margin: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}

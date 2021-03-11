@@ -350,7 +350,7 @@ A ```<th>``` és ```<td>``` tag-ek már konkrét cellákat jelölnek a tábláza
 
 Joggal felmerül a kérdés, hogy vajon ebben a táblázatban hol vannak definiálva az egyes sorok...
 
-Mivel minden cellatartalom és fejléctartalom kulcsok mentén vannak definiálva, ezért a sorok is hasonló elven kerülnek inicializálásra. Az egyes oszlopok és sorok megfelelő összerendeléséhez a sorokat is definiálni kell, ezt hivatottak megcsinálni a ```*matHeaderRowDef``` és a ```*matRowDef``` strukturális direktívák. A ```displayColumns``` komponens adattag kizárólag az oszlopokhoz rendelt kulcsokat tartalmazzák (tömb formában), amelyekkel a ```dataSource``` tömbben lévő objektumok egyes adattagjait (kulcsait) megtalálják.
+Mivel minden cellatartalom és fejléctartalom kulcsok mentén vannak definiálva, ezért a sorok is hasonló elven kerülnek inicializálásra. Az egyes oszlopok és sorok megfelelő összerendeléséhez a sorokat is definiálni kell, ezt hivatottak megcsinálni a ```*matHeaderRowDef``` és a ```*matRowDef``` strukturális direktívák. A ```displayedColumns``` komponens adattag kizárólag az oszlopokhoz rendelt kulcsokat tartalmazzák (tömb formában), amelyekkel a ```dataSource``` tömbben lévő objektumok egyes adattagjait (kulcsait) megtalálják.
 
 Ugyan zavaró lehet, hogy az egyes HTML5 elemek össze-vissza kerülnek implementálásra (pl.: ```<td>``` elem nincs ```<tr>``` elembe ágyazva), de voltaképp a ```mat-table``` direktíva minden összerendelést korrekt módon végrehajt.
 

@@ -1,0 +1,7 @@
+<h1>Webfejlesztési keretrendszerek</h1>
+
+<div class="splash-category">
+  <mat-card *ngFor="let item of categories" matRipple [matRippleColor]="item.color" appOnHover (click)="callSelectC.emit(item.value)">
+    {{item.title}}
+  </mat-card>
+</div>

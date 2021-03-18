@@ -275,7 +275,7 @@ Az ng-template egy újabb olyan HTML tag, amely nem jelenik meg a DOM-on, kizár
 </ng-template>
 ```
 
-## HostListener dekorátor
+## @HostListener() dekorátor
 
 A HostListener dekorátor segítségével tudunk egy komponens HTML eleméhez egyedi interakciókat rendelni (pl.: kattintás vagy gomb lenyomásának eseménye).
 

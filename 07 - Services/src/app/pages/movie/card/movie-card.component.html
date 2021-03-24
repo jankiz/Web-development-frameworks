@@ -1,0 +1,20 @@
+<mat-card *ngIf="movie" (click)="getMovie.emit(movie)">
+  <mat-card-header>
+    <mat-card-title>{{movie.title}}<small *ngIf="movie.lengthMin">({{movie.lengthMin}}p)</small></mat-card-title>
+    <mat-card-subtitle>
+      <div [style.backgroundColor]="movie.imdb > 8.3 ? '#e91e63': '#d90000'" class="imdb">{{movie.imdb}}</div>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <img *ngIf="movie.img" [src]="movie.img" alt="borito">
+    <p>{{movie.description}}</p>
+  </mat-card-content>
+  <mat-card-actions *ngIf="hasAction">
+    <button mat-button (click)="toggleStar($event)">
+      <mat-icon *ngIf="movie.star;else star" style="color: #e91e63;">star</mat-icon>
+      <ng-template #star>
+        <mat-icon>star_outline</mat-icon>
+      </ng-template>
+    </button>
+  </mat-card-actions>
+</mat-card>

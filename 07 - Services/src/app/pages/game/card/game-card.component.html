@@ -1,0 +1,9 @@
+<mat-card *ngIf="game">
+  <mat-card-header>
+    <mat-card-title>{{game.title}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <img *ngIf="game.img" [src]="game.img" alt="borito">
+    <p>{{game.description}}</p>
+  </mat-card-content>
+</mat-card>

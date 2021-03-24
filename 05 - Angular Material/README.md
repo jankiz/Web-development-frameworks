@@ -2,7 +2,7 @@
 
 ## Bevezető
 
-Jelen gyakorlati anyag az Angular Material használatát használatát hivatott bemutatni.
+Jelen gyakorlati anyag az Angular Material használatát hivatott bemutatni.
 
 ## Projekt futtatása
 

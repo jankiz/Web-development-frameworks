@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>{{title}}</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<app-container classes="container-1 flex">
+  <app-game-card class="item" *ngFor="let item of list | async" [game]="item"></app-game-card>
+  <br>
+</app-container>
+
+<button mat-fab class="action-btn" (click)="openDialog()">
+  <mat-icon>add</mat-icon>
+</button>

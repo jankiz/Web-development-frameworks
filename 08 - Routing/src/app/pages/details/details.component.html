@@ -1,0 +1,35 @@
+<mat-card class="det-img" *ngIf="inData | async as item" [style.backgroundImage]="'url(' + item.img + ')'">
+  <div style="display: flex;">
+    <span style="flex: 1 1;"></span>
+    <button mat-button (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <span style="flex: 1 1;"></span>
+  <div class="det-title">
+    <h1>{{item.title}}</h1>
+    <p>{{item.description}}</p>
+  </div>
+</mat-card>
+<mat-tab-group>
+  <mat-tab label="Áttekintés">
+  </mat-tab>
+  <mat-tab label="Megjegyzések">
+    <mat-card class="no-box transparent">
+      <form>
+        <mat-form-field class="max-width">
+          <mat-label>Megjegyzés írása</mat-label>
+          <textarea matInput placeholder="Pl. Jajj de jó film..." cdkTextareaAutosize cdkAutosizeMinRows="4"></textarea>
+        </mat-form-field>
+        <div style="display: flex; justify-content: flex-end;">
+          <button mat-button type="reset" class="margin-right">
+            MÉGSEM
+          </button>
+          <button mat-raised-button type="submit" color="primary">
+            MEGJEGYZÉS
+          </button>
+        </div>
+      </form>
+    </mat-card>
+  </mat-tab>
+</mat-tab-group>

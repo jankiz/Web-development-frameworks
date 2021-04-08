@@ -1,9 +1,9 @@
 
-# 6. gyakorlat - Komponensek és dekorátorok
+# 8. gyakorlat - Routing
 
 ## Bevezető
 
-Jelen gyakorlati anyag az Angular komponensek között kialakítható hierarchiát és a főbb dekorátorok használatát hivatott bemutatni.
+Jelen gyakorlati anyag az Angular komponensek közötti végpont-alapú (route-alapú) navigációt hivatott bemutatni, illetve a végpontok definiálásának módjait.
 
 ## Projekt futtatása
 

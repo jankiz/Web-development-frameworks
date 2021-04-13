@@ -1,0 +1,13 @@
+.det-img {
+  display: flex;
+  min-height: 40vh;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 -50px 100px #000000;
+}
+
+.det-title {
+  bottom: 0;
+}

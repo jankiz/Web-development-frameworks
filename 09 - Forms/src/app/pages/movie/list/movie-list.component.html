@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>{{title}}</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<app-container classes="container-1 flex">
+  <app-movie-card class="item" *ngFor="let item of list | async" [movie]="item" (getMovie)="onGetMovie($event)">
+  </app-movie-card>
+</app-container>
+<br>

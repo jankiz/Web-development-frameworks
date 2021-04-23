@@ -28,10 +28,10 @@ A Person erőforrás a demográfiai és adminisztratív információit írja le 
 
 Az adatmodell alapján jól látszik, hogy melyek azok a mezők, amelyek kötelezően kitöltendőek. Ezt a kardinalitás oszlop mutatja, mely négy jelölést tartalmazhat:
 
-0..1 - a mező kitöltése nem kötelező, de legfeljebb egy objektumot tartalmazhat
-0..\* - a mező kitöltése nem kötelező, de bármennyi elemet (objektumot) tartalmazhat
-1..1 - a mező kitöltése kötelező, és legfeljebb egy objektumot tartalmaz
-1..\* - a mező kitöltése kötelező, és bármennyi elemet (objektumot) tartalmazhat
+- 0..1 - a mező kitöltése nem kötelező, de legfeljebb egy objektumot tartalmazhat
+- 0..\* - a mező kitöltése nem kötelező, de bármennyi elemet (objektumot) tartalmazhat
+- 1..1 - a mező kitöltése kötelező, és legfeljebb egy objektumot tartalmaz
+- 1..\* - a mező kitöltése kötelező, és bármennyi elemet (objektumot) tartalmazhat
 
 A kardinalitáson túl fontos szerepet tölt be a típus is, hiszen ebből látszik, hogy elemi adattípussal kell dolgoznunk az adott mező esetében vagy komplex objektum típusokkal. Erre néhány példa:
 

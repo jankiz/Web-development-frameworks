@@ -1,0 +1,37 @@
+.container-1 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .container-1 {
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 24px;
+  }
+}
+
+@media (min-width: 991px) {
+  .container-1 {
+    width: calc(961px - 230px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-1 {
+    width: calc(1170px - 230px);
+  }
+}
+
+.container-1.no-padding {
+  padding: 0;
+}
+
+.container-1.no-padding-top {
+  padding-top: 0;
+}
+
+.container-1.flex {
+  display: flex;
+  flex-wrap: wrap;
+}

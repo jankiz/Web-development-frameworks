@@ -302,10 +302,6 @@ export class TestService {
 
 A példakód az első két számjegyet (1, 2) adja vissza egy Observable-ben.
 
-### Promise vs. Observable
-
-Ahogy azt a példakódokból is láttuk mindketten alkalmasak aszinkron műveletek végrehajtására és kezelésére. A fő különbség az adatok visszajuttatásának módjában rejlik. Míg a Promise egyszer közöl adatot, és az addig elérhető összeset küldi, addig az Observable egy adatfolyamot nyit, amelyben az adatok kisebb egységet formájában kerül átküldésre. A Promise-nál a ```resolve()``` függvényben egyszerre küldünk mindent, amit szeretnénk, az Observable-nél a ```Subscriber``` adatrészeket küld a ```next()``` függvényen keresztül vagy hibát az ```error()```-on keresztül. Az adatfolyam végét a ```complete()``` függvény meghívásával jelezzük.
-
 ## Szerkesztők
 
 Forráskód és videó: Kokrehel Grácián (kokrehel@inf.u-szeged.hu)

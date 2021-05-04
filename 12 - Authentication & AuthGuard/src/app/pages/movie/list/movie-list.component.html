@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>{{title}}</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<app-container classes="container-1 flex">
+  <span class="centering" *ngIf="pageState===''">
+    Valami hiba történt!
+  </span>
+
+  <span class="centering" *ngIf="pageState==='loading'">
+    <mat-spinner></mat-spinner>
+  </span>
+
+  <span class="centering" *ngIf="pageState==='noData'">
+    Nincs adat.
+  </span>
+
+  <ng-container *ngIf="pageState==='data'">
+    <app-movie-card class="item" *ngFor="let item of list" [movie]="item" (getMovie)="onGetMovie($event)">
+    </app-movie-card>
+  </ng-container>
+</app-container>
+<br>

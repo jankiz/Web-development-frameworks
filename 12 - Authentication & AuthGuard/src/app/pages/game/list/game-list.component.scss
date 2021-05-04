@@ -1,0 +1,26 @@
+.action-btn {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+}
+
+.searchbar {
+  width: 100%;
+  margin-left: 16px;
+}
+
+.searchbar input {
+  width: 100%;
+  max-width: 250px;
+}
+
+.centering {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

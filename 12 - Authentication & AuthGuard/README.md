@@ -97,6 +97,7 @@ Főbb adattagok és függvények:
 | függvény | használat |
 |:-------------:|:-------------:|
 | ```createUserWithEmailAndPassword```| Email/jelszó alapú regisztrációt valósít meg. |
+| ```sendPasswordResetEmail``` | Elfelejtett jelszó esetén új megadása email-ben kiküldött linken keresztül. |
 | ```signInWithEmailAndPassword``` | Felhasználó beléptetése email/jelszó párossal. |
 | ```signOut``` | Felhasználó kijelentkeztetése. |
 

@@ -1,0 +1,23 @@
+[mat-button] {
+  text-transform: capitalize;
+}
+
+[mat-button]:not(:last-child) {
+  margin-right: 16px;
+}
+
+a[mat-button] {
+  font-size: xx-large;
+}
+
+.active {
+  border-bottom: white 1px solid;
+  border-radius: 0;
+}
+
+mat-toolbar {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1000;
+}

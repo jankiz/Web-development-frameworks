@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>{{title}}</span>
+    <div class="searchbar">
+      <input type="text" placeholder="Keresés" matInput [formControl]="myControl" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions$ | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<app-container classes="container-1 flex">
+  <ng-container *ngIf="(list$) | async as list; else loadingOrError">
+    <app-game-card class="item" *ngFor="let item of list" [game]="item"></app-game-card>
+    <br>
+  </ng-container>
+  <ng-template #loadingOrError>
+    <ng-container *ngIf="errorObject; else loading">
+      <span class="centering">
+        Valami hiba történt!
+      </span>
+    </ng-container>
+    <ng-template #loading>
+      <span class="centering">
+        <mat-spinner></mat-spinner>
+      </span>
+    </ng-template>
+  </ng-template>
+</app-container>
+
+<button mat-fab class="action-btn" (click)="openDialog()">
+  <mat-icon>add</mat-icon>
+</button>

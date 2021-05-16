@@ -1,0 +1,46 @@
+html,
+body {
+  height: 100%;
+  background: #303030;
+  color: white;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.max-width {
+  width: 100%;
+}
+
+.centering {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: stretch;
+}
+
+.reg-card,
+.log-card {
+  width: 100vw;
+  height: 100vh;
+}
+
+@media (min-width: 768px) {
+
+  .reg-card,
+  .log-card {
+    max-width: 33em;
+    min-height: 40em;
+    height: auto;
+  }
+}
+
+.item {
+  flex: 1 1;
+  min-width: 250px;
+  margin: 4px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}

@@ -1,0 +1,35 @@
+<app-container>
+  <h1>Webfejlesztési keretrendszerek</h1>
+
+  <div class="splash-category">
+    <mat-card *ngFor="let item of categories" matRipple [matRippleColor]="item.color" appOnHover
+      [routerLink]="[ item.url ]">
+      {{item.title}}
+    </mat-card>
+  </div>
+  <mat-card style="margin: 4px;">
+    Date
+    <p>Today: {{today}}</p>
+    <p>Today(date): {{today | date}}</p>
+    <p>Today(short): {{today | date: 'short'}}</p>
+    <p>Today(medium): {{today | date: 'medium'}}</p>
+    <p>Today(long): {{today | date: 'long'}}</p>
+    <p>Today(fullDate): {{today | date: 'fullDate'}}</p>
+    <p>Today(custom): {{today | date: 'yyyy.MM.dd. HH:mm'}}</p>
+    Case
+    <p>uppercase: {{'habla' | uppercase}}</p>
+    <p>lowercase: {{'HABLA' | lowercase}}</p>
+    <p>titlecase: {{'hablaBabla' | titlecase}}</p>
+    Currency
+    <p>currency: {{1.56 | currency:'HUF':'symbol'}}</p>
+    Number
+    <p>1.0-0: {{pi | number:'1.0-0'}}</p>
+    <p>1.0-2: {{pi | number:'1.0-2'}}</p>
+    Percent
+    <p>%: {{.26 | percent}}</p>
+    Pow
+    <p>10^2: {{10 | pow:2}}</p>
+
+    <p>{{'HABLA' | lowercase | titlecase}}</p>
+  </mat-card>
+</app-container>

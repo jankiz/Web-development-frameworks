@@ -1,0 +1,102 @@
+<!-- <div class="container" *ngIf="imageInput">
+    <img class="galleryImage" [src]="loadedImage" />
+    <div class="break"></div>
+    <div>{{imageInput.user_name}}</div>
+    <div class="break"></div>
+    <div>{{imageInput.user_url}}</div>
+    <div class="break"></div>
+    <div>{{imageInput.photo_url}}</div>
+
+    <div class="break"></div>
+    <div *ngIf="comments.length">
+        <table>
+            <tr>
+                <th>User</th>
+                <th>Comment</th>
+                <th>Date</th>
+            </tr>
+            <tr *ngFor="let comment of comments; let i = index;"
+                [ngStyle]="{'background-color' : i % 2 === 0 ? 'darkcyan' : 'cyan'}">
+                <td>{{comment.username}}</td>
+                <td>{{comment.comment}}</td>
+                <td>{{comment.date | dateFormat}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="break"></div>
+    <form [formGroup]="commentsForm" (ngSubmit)="addComment()">
+        <div>
+            <label for="username">Username: </label>
+            <input type="text" formControlName="username" />
+        </div>
+        <div class="break"></div>
+        <div>
+            <textarea rows="10" cols="50" formControlName="comment"></textarea>
+        </div>
+
+        <div class="break"></div>
+        <div>
+            <button type="submit">ADD</button>
+        </div>
+    </form>
+</div> -->
+
+<div class="div-card" *ngIf="imageInput">
+    <mat-card fxLayout fxLayoutGap="20px">
+        <span fxFlex="1 1 50%">
+            <mat-card-header>
+                <mat-card-title>{{imageInput.user_name}}</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <img class="galleryImage" [src]="loadedImage" />
+                <div>{{imageInput.user_name}}</div>
+                <!-- <div class="break"></div>
+                <div>{{imageInput.user_url}}</div>
+                <div class="break"></div>
+                <div>{{imageInput.photo_url}}</div> -->
+            </mat-card-content>
+        </span>
+        <span fxFlex="1 1 50%">
+            <mat-card-actions>
+                <form [formGroup]="commentsForm" (ngSubmit)="addComment()">
+                    <div>
+                        <mat-form-field>
+                            <mat-label for="username">Username: </mat-label>
+                            <input matInput type="text" formControlName="username" />
+                        </mat-form-field>
+                    </div>
+                    <div class="break"></div>
+                    <div>
+                        <mat-form-field>
+                            <mat-label for="comment">Comment: </mat-label>
+                            <textarea matInput rows="10" cols="50" formControlName="comment"></textarea>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="break"></div>
+                    <div>
+                        <button mat-raised-button color="primary" type="submit">ADD</button>
+                    </div>
+                </form>
+            </mat-card-actions>
+        </span>
+
+    </mat-card>
+    <div *ngIf="comments.length">
+        <table>
+            <tr>
+                <th>User</th>
+                <th>Comment</th>
+                <th>Date</th>
+            </tr>
+            <tr *ngFor="let comment of comments; let i = index;"
+                [ngStyle]="{'background-color' : i % 2 === 0 ? 'darkcyan' : 'cyan'}">
+                <td>{{comment.username}}</td>
+                <td>{{comment.comment}}</td>
+                <td>{{comment.date | dateFormat}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

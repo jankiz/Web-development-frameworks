@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.galleryImage {
+    width: 25%;
+    height: auto;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+.table-header-even {
+    background-color: darkcyan;
+}
+
+.table-header-odd {
+    background-color: cyan;
+}
+
+form {
+    width: 100%;
+    text-align: center;
+}
+
+.div-card {
+    padding: 50px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-card-content {
+    text-align: center;
+}

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webfejl-2022": {
+      "hosting": {
+        "week-04": [
+          "webfejl-2022"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webfejl-2022"
+  }
+}

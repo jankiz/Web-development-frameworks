@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Image } from '../../../shared/models/Image';
 import { Comment } from '../../../shared/models/Comment';
@@ -56,7 +56,7 @@ export class ViewerComponent implements OnInit, OnChanges {
         this.commentsForm.get('date')?.setValue(new Date());
 
         // SPREAD OPERATOR
-        this.comments.push({ ...this.commentsForm.value });
+        this.comments.push({ ...this.commentsForm.value as Comment });
 
 
         // Object

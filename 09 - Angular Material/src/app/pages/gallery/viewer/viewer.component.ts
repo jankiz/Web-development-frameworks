@@ -56,7 +56,7 @@ export class ViewerComponent implements OnInit, OnChanges {
         this.commentsForm.get('date')?.setValue(new Date());
 
         // SPREAD OPERATOR
-        this.comments.push({ ...this.commentsForm.value });
+        this.comments.push({ ...this.commentsForm.value as Comment });
 
 
         // Object

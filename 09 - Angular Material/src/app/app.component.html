@@ -4,14 +4,14 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <div fxHide.gt-xs>
+      <div class="hamburger-menu-wrapper">
         <button mat-icon-button (click)="onToggleSidenav(sidenav)">
           <mat-icon>menu</mat-icon>
         </button>
       </div>
       <div>GALLERY-APP</div>
-      <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
-        <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+      <div class="navigation-wrapper">
+        <ul class="navigation-items">
           <li><a routerLink="/login">Login</a></li>
           <li><a routerLink="/signup">Register</a></li>
           <li><a routerLink="/main">Main</a></li>

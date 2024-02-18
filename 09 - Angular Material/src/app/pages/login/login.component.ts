@@ -11,8 +11,8 @@ import { FakeLoadingService } from '../../shared/services/fake-loading.service';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  email = new FormControl('');
-  password = new FormControl('');
+  email = new FormControl<string>('');
+  password = new FormControl<string>('');
 
   loadingSubscription?: Subscription;
   loadingObservation?: Observable<boolean>;
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     // Observable
     // memory leak
-    this.loadingObservation = this.loadingService.loadingWithObservable(this.email.value, this.password.value)
+    this.loadingObservation = this.loadingService.loadingWithObservable(this.email.value as string, this.password.value as string)
     this.loadingSubscription = this.loadingObservation
       .subscribe(
         {

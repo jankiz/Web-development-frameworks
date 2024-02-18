@@ -14,7 +14,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -35,8 +34,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule,
-    FlexLayoutModule
+    MatButtonModule
   ]
 })
 export class GalleryModule { }

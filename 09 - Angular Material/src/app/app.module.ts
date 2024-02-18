@@ -12,7 +12,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatListModule } from '@angular/material/list';
 
 @NgModule({
@@ -30,7 +29,6 @@ import { MatListModule } from '@angular/material/list';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    FlexLayoutModule,
     MatListModule
   ],
   providers: [],

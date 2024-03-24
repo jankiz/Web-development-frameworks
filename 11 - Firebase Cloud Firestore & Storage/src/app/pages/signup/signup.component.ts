@@ -29,15 +29,15 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     console.log(this.signUpForm.value);
-    this.authService.signup(this.signUpForm.get('email')?.value, this.signUpForm.get('password')?.value).then(cred => {
+    this.authService.signup(this.signUpForm.get('email')?.value as string, this.signUpForm.get('password')?.value as  string).then(cred => {
       console.log(cred);
       const user: User = {
         id: cred.user?.uid as string,
-        email: this.signUpForm.get('email')?.value,
-        username: this.signUpForm.get('email')?.value.split('@')[0],
+        email: this.signUpForm.get('email')?.value as string,
+        username: (this.signUpForm.get('email')?.value as string).split('@')[0],
         name: {
-          firstname: this.signUpForm.get('name.firstname')?.value,
-          lastname: this.signUpForm.get('name.lastname')?.value
+          firstname: this.signUpForm.get('name.firstname')?.value as string,
+          lastname: this.signUpForm.get('name.lastname')?.value as string
         }
       };
       this.userService.create(user).then(_ => {

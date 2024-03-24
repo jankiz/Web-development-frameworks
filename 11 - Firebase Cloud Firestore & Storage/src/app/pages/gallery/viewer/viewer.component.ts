@@ -55,10 +55,10 @@ export class ViewerComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    const user = JSON.parse(localStorage.getItem('user') as string) as firebase.default.User;
+    const user = JSON.parse(localStorage.getItem('user') as string);
     this.userService.getById(user.uid).subscribe(data => {
       this.user = data;
-      this.commentsForm.get('username')?.setValue(this.user?.username);
+      this.commentsForm.get('username')?.setValue(this.user?.username as string);
     }, error => {
       console.error(error);
     });
@@ -85,7 +85,7 @@ export class ViewerComponent implements OnInit, OnChanges {
         // this.comments.push(Object.assign({}, this.commentObject));
         
         // TODO: INSERT
-        this.commentService.create(this.commentsForm.value).then(_ => {
+        this.commentService.create(this.commentsForm.value as Comment).then(_ => {
           this.router.navigateByUrl('/gallery/successful/' + this.commentsForm.get('username')?.value);
         }).catch(error => {
           console.error(error);

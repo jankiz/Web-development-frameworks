@@ -27,7 +27,7 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     console.log(this.signUpForm.value);
-    this.authService.signup(this.signUpForm.get('email')?.value, this.signUpForm.get('password')?.value).then(cred => {
+    this.authService.signup(this.signUpForm.get('email')?.value as string, this.signUpForm.get('password')?.value as string).then(cred => {
       console.log(cred);
     }).catch(error => {
       console.error(error);

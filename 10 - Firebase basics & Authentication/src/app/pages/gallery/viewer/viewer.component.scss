@@ -43,3 +43,13 @@ mat-form-field {
 mat-card-content {
     text-align: center;
 }
+
+mat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mat-card-content-wrapper {
+    flex: 1 1 50%;
+}

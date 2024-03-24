@@ -43,8 +43,8 @@
 </div> -->
 
 <div class="div-card" *ngIf="imageInput">
-    <mat-card fxLayout fxLayoutGap="20px">
-        <span fxFlex="1 1 50%">
+    <mat-card>
+        <span class="mat-card-content-wrapper">
             <mat-card-header>
                 <mat-card-title>{{imageInput.user_name}}</mat-card-title>
             </mat-card-header>
@@ -58,7 +58,7 @@
                 <div>{{imageInput.photo_url}}</div> -->
             </mat-card-content>
         </span>
-        <span fxFlex="1 1 50%">
+        <span class="mat-card-content-wrapper">
             <mat-card-actions>
                 <form [formGroup]="commentsForm" (ngSubmit)="addComment()">
                     <div>

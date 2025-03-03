@@ -1,0 +1,44 @@
+<div class="container">
+    <select #chosenProfile (change) = "reload()">
+        <option value="OQyRttOV418">OQyRttOV418</option>
+        <option value="5XP-n_Xqqv8">5XP-n_Xqqv8</option>
+        <option value="Shf_B7x8qDA">Shf_B7x8qDA</option>
+        <option value="LFAhbzmvpak">LFAhbzmvpak</option>
+        <option value="eFXho78pQH8">eFXho78pQH8</option>
+    </select>
+    
+    <h2>User Profile</h2>
+    
+    <div class="profile-header">
+        <div class="avatar">{{profileObject[chosenProfile.value].avatar}}</div>
+        <div class="user-info">
+            <div class="user-name">{{profileObject[chosenProfile.value].user_name}}</div>
+            <div class="user-email">{{profileObject[chosenProfile.value].email}}</div>
+        </div>
+    </div>
+    
+    <h2>Task Statistics</h2>
+    
+    <table class="stats-table">
+        <tr>
+            <th>Metric</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Total Tasks</td>
+            <td>{{profileObject[chosenProfile.value].tasks.total}}</td>
+        </tr>
+        <tr>
+            <td>Completed Tasks</td>
+            <td>{{profileObject[chosenProfile.value].tasks.completed}}</td>
+        </tr>
+        <tr>
+            <td>Pending Tasks</td>
+            <td>{{profileObject[chosenProfile.value].tasks.pending}}</td>
+        </tr>
+        <tr>
+            <td>Completion Rate</td>
+            <td>{{(profileObject[chosenProfile.value].tasks.completed / profileObject[chosenProfile.value].tasks.total * 100).toFixed(2)}}%</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,42 @@
+<div class="container">
+    <select #chosenProfile (change)="reload(chosenProfile.selectedIndex)">
+        @for (profile of ProfileObject; track $index) {
+            <option value="{{$index}}">{{profile.id}}</option>
+        }
+    </select>
+    
+    <h2>User Profile</h2>
+    
+    <div class="profile-header">
+        <div class="avatar">{{ProfileObject[selectedIndex].avatar}}</div>
+        <div class="user-info">
+            <div class="user-name">{{ProfileObject[selectedIndex].user_name}}</div>
+            <div class="user-email">{{ProfileObject[selectedIndex].email}}</div>
+        </div>
+    </div>
+    
+    <h2>Task Statistics</h2>
+    
+    <table class="stats-table">
+        <tr>
+            <th>Metric</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Total Tasks</td>
+            <td>{{ProfileObject[selectedIndex].tasks.total}}</td>
+        </tr>
+        <tr>
+            <td>Completed Tasks</td>
+            <td>{{ProfileObject[selectedIndex].tasks.completed}}</td>
+        </tr>
+        <tr>
+            <td>Pending Tasks</td>
+            <td>{{ProfileObject[selectedIndex].tasks.pending}}</td>
+        </tr>
+        <tr>
+            <td>Completion Rate</td>
+            <td>{{(ProfileObject[selectedIndex].tasks.completed / ProfileObject[selectedIndex].tasks.total * 100).toFixed(2)}}%</td>
+        </tr>
+    </table>
+</div>

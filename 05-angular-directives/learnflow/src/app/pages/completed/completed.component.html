@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="directive-demo">
+        <h3>Angular Attribútum Direktívák</h3>
+        
+        <!-- ngModel -->
+        <div class="demo-section">
+            <h4>ngModel direktíva</h4>
+            <p>Task name filter: <input type="text" [(ngModel)]="filterText" placeholder="Search tasks..."></p>
+            <p class="description">Current value: {{filterText}}</p>
+        </div>
+        
+        <!-- ngClass -->
+        <div class="demo-section">
+            <h4>ngClass direktíva</h4>
+            <p>Choose a table style:</p>
+            <div class="button-group">
+                <button (click)="selectedTheme = 'light'" [ngClass]="{'active': selectedTheme === 'light'}">Light</button>
+                <button (click)="selectedTheme = 'dark'" [ngClass]="{'active': selectedTheme === 'dark'}">Dark</button>
+                <button (click)="selectedTheme = 'colorful'" [ngClass]="{'active': selectedTheme === 'colorful'}">Colorful</button>
+            </div>
+        </div>
+        
+        <!-- ngStyle -->
+        <div class="demo-section">
+            <h4>ngStyle direktíva</h4>
+            <p>Task text size:</p>
+            <input type="range" [(ngModel)]="fontSize" min="12" max="20" step="1">
+            <span [ngStyle]="{'font-size.px': fontSize}">Sample text ({{fontSize}}px)</span>
+        </div>
+        
+        <!-- Pipe -->
+        <div class="demo-section">
+            <h4>Custom DateFormatter Pipe</h4>
+            <p>Original date: 2025-03-01T14:30:00Z</p>
+            <p>Formatted date: {{'2025-03-01T14:30:00Z' | dateFormatter}}</p>
+        </div>
+    </div>
+    
+    <div class="header">
+        <h2>Completed Learning Tasks</h2>
+        <button class="clear-button" [ngClass]="{'danger-button': completedTasks.length > 1}">Clear All</button>
+    </div>
+    
+    <table [ngClass]="selectedTheme">
+        <thead>
+            <tr>
+                <th>Task</th>
+                <th>Completion Date</th>
+                <th>Time Spent</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let task of completedTasks">
+                <td class="completed-task" [ngStyle]="{'font-size.px': fontSize}">{{task.name}}</td>
+                <td>{{task.date | dateFormatter}}</td>
+                <td>{{task.time}}</td>
+                <td><a href="#" class="delete-link">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

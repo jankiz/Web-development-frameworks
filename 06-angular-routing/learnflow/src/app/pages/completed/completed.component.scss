@@ -1,0 +1,145 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin: 0;
+    color: #333;
+}
+
+.clear-button {
+    background-color: #f1f1f1;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.danger-button {
+    background-color: #f44336;
+    color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+    font-weight: normal;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    color: #767676;
+}
+
+.completed-task {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.delete-link {
+    color: #e53935;
+    text-decoration: none;
+}
+
+.delete-link:hover {
+    text-decoration: underline;
+}
+
+/* Directive styles */
+.directive-demo {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.demo-section {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.button-group button {
+    padding: 8px 16px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-group button.active {
+    background-color: #5a4af7;
+    color: white;
+    border-color: #4a3cd6;
+}
+
+table.light {
+    background-color: #ffffff;
+}
+
+table.dark {
+    background-color: #333;
+    color: #fff;
+}
+
+table.dark th {
+    background-color: #444;
+    color: #fff;
+    border-bottom: 1px solid #555;
+}
+
+table.dark td {
+    color: #ddd;
+    border-bottom: 1px solid #444;
+}
+
+table.dark .completed-task {
+    color: #aaa;
+}
+
+table.dark .delete-link {
+    color: #ff8a80;
+}
+
+table.colorful th {
+    background-color: #5a4af7;
+    color: white;
+}
+
+table.colorful tr:nth-child(odd) {
+    background-color: #f0f8ff;
+}
+
+table.colorful tr:nth-child(even) {
+    background-color: #e6f2ff;
+}

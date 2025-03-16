@@ -1,0 +1,23 @@
+nav {
+    background-color: rgb(7, 4, 156);
+    width: 100%;
+}
+
+
+ul {
+    display: flex;
+    list-style: none;
+    font-weight: bold;
+    align-items: center;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    gap: 200px;
+    height: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+

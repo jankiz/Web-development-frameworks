@@ -1,0 +1,7 @@
+<tr>
+    <td><input type="checkbox" [checked]="task.completed" (change)="toggleComplete()"></td>
+    <td [class.completed]="task.completed">{{ task.name }}</td>
+    <td><span class="priority" [ngClass]="task.priority.toLowerCase()">{{ task.priority }}</span></td>
+    <td>{{ task.dueDate }}</td>
+    <td><a href="#" class="edit-link">Edit</a></td>
+  </tr>

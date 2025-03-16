@@ -1,0 +1,39 @@
+<!--
+<app-menu (selectedPage)="changePage($event)"></app-menu>
+@if (page === "home") {
+  <div class="home">
+    <app-home></app-home>
+  </div>
+} @else if (page === 'tasks') {
+  <app-tasks></app-tasks>
+} @else if (page === 'completed') {
+  <app-completed></app-completed>
+} @else {
+  <app-profile></app-profile>
+}
+
+<app-menu (selectedPage)="changePage($event)"></app-menu>
+@switch (page) {
+  @case ('home') {
+    <div class="home">
+      <app-home></app-home>
+    </div>
+  }
+  @case ('tasks') {
+    <app-tasks 
+      title="My Learning Tasks" 
+    ></app-tasks>
+  }
+  @case ('completed') {
+    <app-completed></app-completed>
+  }
+  @case ('profile'){
+    <app-profile></app-profile>
+  }
+  @default {
+    <h1>Page not found ...</h1>
+  }
+}
+-->
+<app-menu></app-menu>
+<router-outlet />

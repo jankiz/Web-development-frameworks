@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="header">
+        <h2>{{ title }}</h2>
+        <div class="input-group">
+            <input type="text" placeholder="Add new learning task..." [(ngModel)]="newTaskName">
+            <select [(ngModel)]="newTaskPriority">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            <button (click)="addTask()">Add</button>
+        </div>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>Task</th>
+                <th>Priority</th>
+                <th>Due Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (task of tasks; track trackById($index, task)) {
+                <tr>
+                    <td><input type="checkbox" [checked]="task.completed" (change)="toggleTaskCompletion(task)"></td>
+                    <td [class.completed]="task.completed">{{ task.name }}</td>
+                    <td><span class="priority {{ task.priority.toLowerCase() }}">{{ task.priority }}</span></td>
+                    <td>{{ task.dueDate }}</td>
+                    <td><a href="#" class="edit-link">Edit</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

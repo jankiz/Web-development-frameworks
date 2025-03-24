@@ -1,0 +1,28 @@
+<!--
+<nav>
+    <ul>
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/tasks">Tasks</a></li>
+      <li><a routerLink="/completed">Completed Tasks</a></li>
+      <li><a routerLink="/profile">Profile</a></li>
+    </ul>
+</nav>
+-->
+<mat-nav-list>
+  <a mat-list-item routerLink="/home" routerLinkActive="active-list-item" (click)="closeMenu()">
+    <mat-icon matListItemIcon>home</mat-icon>
+    <span matListItemTitle>Home</span>
+  </a>
+  <a mat-list-item routerLink="/tasks" routerLinkActive="active-list-item" (click)="closeMenu()">
+    <mat-icon matListItemIcon>assignment</mat-icon>
+    <span matListItemTitle>Tasks</span>
+  </a>
+  <a mat-list-item routerLink="/completed" routerLinkActive="active-list-item" (click)="closeMenu()">
+    <mat-icon matListItemIcon>done_all</mat-icon>
+    <span matListItemTitle>Completed Tasks</span>
+  </a>
+  <a mat-list-item routerLink="/profile" routerLinkActive="active-list-item" (click)="closeMenu()">
+    <mat-icon matListItemIcon>person</mat-icon>
+    <span matListItemTitle>Profile</span>
+  </a>  
+</mat-nav-list>

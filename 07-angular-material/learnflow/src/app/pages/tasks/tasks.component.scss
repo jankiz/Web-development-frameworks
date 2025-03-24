@@ -1,0 +1,108 @@
+.task-card {
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+mat-card-header {
+  padding: 16px 16px 0 16px;
+}
+
+mat-card-title {
+  font-size: 20px;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.input-group {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.task-input {
+  flex: 2;
+}
+
+.priority-select {
+  flex: 1;
+  max-width: 200px;
+}
+
+.add-button {
+  height: 40px;
+  border-radius: 20px;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-table {
+  width: 100%;
+}
+
+th.mat-header-cell {
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.mat-row:hover {
+  background-color: #f9f9f9;
+}
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.priority-chip {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 13px;
+  border: 1px solid;
+}
+
+.priority-chip.high {
+  color: #d32f2f;
+  background-color: rgba(211, 47, 47, 0.08);
+  border-color: rgba(211, 47, 47, 0.2);
+}
+
+.priority-chip.medium {
+  color: #ed6c02;
+  background-color: rgba(237, 108, 2, 0.08);
+  border-color: rgba(237, 108, 2, 0.2);
+}
+
+.priority-chip.low {
+  color: #2e7d32;
+  background-color: rgba(46, 125, 50, 0.08);
+  border-color: rgba(46, 125, 50, 0.2);
+}
+
+/* A táblázatért felelős oszlopok szélességeinek beállítása */
+.mat-column-status {
+  width: 70px;
+}
+
+.mat-column-priority {
+  width: 120px;
+  text-align: center;
+}
+
+.mat-column-dueDate {
+  width: 120px;
+}
+
+.mat-column-actions {
+  width: 70px;
+  text-align: center;
+}

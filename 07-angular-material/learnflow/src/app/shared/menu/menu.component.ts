@@ -1,7 +1,7 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatListModule } from '@angular/material/list'
-import { MatIcon } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { MatSidenav } from '@angular/material/sidenav';
 
 
@@ -11,7 +11,7 @@ import { MatSidenav } from '@angular/material/sidenav';
     RouterLink,
     RouterLinkActive,
     MatListModule,
-    MatIcon
+    MatIconModule
   ],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss'

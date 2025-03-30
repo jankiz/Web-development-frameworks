@@ -1,0 +1,13 @@
+<div class="container">
+    <h1>Welcome to LearnFlow Todo</h1>
+    <p>Track your learning tasks efficiently</p>
+    <button mat-flat-button color="primary" class="tasks" (click)="changePage()">View My Tasks</button>
+    
+    @if (!isLoggedIn) {
+      <button mat-flat-button color="accent" [routerLink]="['/login']" class="tasks">Login</button>
+    }
+    
+    @if (isLoggedIn) {
+      <button mat-flat-button color="accent" [routerLink]="['/profile']" class="tasks">My Profile</button>
+    }
+</div>

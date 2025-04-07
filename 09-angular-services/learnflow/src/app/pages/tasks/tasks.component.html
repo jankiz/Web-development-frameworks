@@ -1,0 +1,94 @@
+<mat-card class="task-card">
+  <mat-card-header>
+    <mat-card-title>{{ title }}</mat-card-title>
+  </mat-card-header>
+  
+  <mat-card-content>
+    <form [formGroup]="taskForm" (ngSubmit)="addTask()" class="task-form">
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="task-input">
+          <mat-label>Task name</mat-label>
+          <input matInput formControlName="name" placeholder="Add new learning task...">
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline" class="priority-select">
+          <mat-label>Priority</mat-label>
+          <mat-select formControlName="priority">
+            <mat-option value="High">High</mat-option>
+            <mat-option value="Medium">Medium</mat-option>
+            <mat-option value="Low">Low</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="date-picker">
+          <mat-label>Due Date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="dueDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        
+        <button mat-flat-button color="primary" type="submit" class="add-button">Add Task</button>
+      </div>
+      
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Description (optional)</mat-label>
+        <textarea matInput formControlName="description" rows="2"></textarea>
+      </mat-form-field>
+    </form>
+    
+    <div class="table-container">
+      <table mat-table [dataSource]="tasks" class="task-table">
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let task">
+            <mat-checkbox 
+              [checked]="task.completed" 
+              (change)="toggleTaskCompletion(task)"
+              color="primary">
+            </mat-checkbox>
+          </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Task</th>
+          <td mat-cell *matCellDef="let task" [class.completed]="task.completed">
+            <div>{{ task.name }}</div>
+            <div class="task-description">{{ task.description }}</div>
+          </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="priority">
+          <th mat-header-cell *matHeaderCellDef>Priority</th>
+          <td mat-cell *matCellDef="let task">
+            <span class="priority-chip {{ task.priority.toLowerCase() }}">{{ task.priority }}</span>
+          </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="dueDate">
+          <th mat-header-cell *matHeaderCellDef>Due Date</th>
+          <td mat-cell *matCellDef="let task">
+            {{ task.dueDate | date:'yyyy-MM-dd' }}
+          </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let task">
+            <button mat-icon-button color="primary" aria-label="Edit task">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+        
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="5">No tasks available</td>
+        </tr>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>

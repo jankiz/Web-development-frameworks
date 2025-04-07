@@ -1,0 +1,56 @@
+.completed-container {
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  
+  mat-card {
+    padding: 0;
+  }
+  
+  mat-card-header {
+    background-color: #f5f5f5;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  mat-card-content {
+    padding: 16px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .completed-task {
+    text-decoration: line-through;
+    color: #757575;
+  }
+  
+  .mat-column-actions {
+    width: 80px;
+    text-align: center;
+  }
+  
+  .mat-column-time {
+    width: 120px;
+  }
+  
+  .mat-column-date {
+    width: 150px;
+  }
+  
+  tr.mat-mdc-row:hover {
+    background: whitesmoke;
+  }
+  
+  .mat-mdc-no-data-row {
+    text-align: center;
+    font-style: italic;
+    color: #757575;
+    padding: 16px 0;
+  }

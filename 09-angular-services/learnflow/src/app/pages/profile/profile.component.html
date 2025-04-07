@@ -1,0 +1,77 @@
+<div class="profile-container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>User Profile</mat-card-title>
+        <mat-form-field appearance="outline">
+          <mat-label>Select Profile</mat-label>
+          <mat-select [value]="selectedIndex" (selectionChange)="reload($event.value)">
+            @for (profile of ProfileObject; track $index) {
+              <mat-option [value]="$index">{{profile.id}}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <div class="profile-info">
+          <div class="avatar-container">
+            <div class="avatar mat-elevation-z2">
+              {{ProfileObject[selectedIndex].avatar}}
+            </div>
+          </div>
+          <div class="user-details">
+            <h3 class="user-name">{{ProfileObject[selectedIndex].user_name}}</h3>
+            <div class="user-email">
+              <mat-icon>email</mat-icon>
+              <span>{{ProfileObject[selectedIndex].email}}</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="stats-section">
+          <h2>Task Statistics</h2>
+          
+          <div class="stats-cards">
+            <mat-card class="stat-card">
+              <mat-card-header>
+                <mat-icon mat-card-avatar>assignment</mat-icon>
+                <mat-card-title>{{ProfileObject[selectedIndex].tasks.total}}</mat-card-title>
+                <mat-card-subtitle>Total Tasks</mat-card-subtitle>
+              </mat-card-header>
+            </mat-card>
+            
+            <mat-card class="stat-card">
+              <mat-card-header>
+                <mat-icon mat-card-avatar>done_all</mat-icon>
+                <mat-card-title>{{ProfileObject[selectedIndex].tasks.completed}}</mat-card-title>
+                <mat-card-subtitle>Completed</mat-card-subtitle>
+              </mat-card-header>
+            </mat-card>
+            
+            <mat-card class="stat-card">
+              <mat-card-header>
+                <mat-icon mat-card-avatar>pending</mat-icon>
+                <mat-card-title>{{ProfileObject[selectedIndex].tasks.pending}}</mat-card-title>
+                <mat-card-subtitle>Pending</mat-card-subtitle>
+              </mat-card-header>
+            </mat-card>
+          </div>
+          
+          <mat-card class="completion-card">
+            <mat-card-content>
+              <div class="completion-header">
+                <h3>Completion Rate</h3>
+                <div class="completion-value">
+                  {{(ProfileObject[selectedIndex].tasks.completed / ProfileObject[selectedIndex].tasks.total * 100).toFixed(2)}}%
+                </div>
+              </div>
+              <mat-progress-bar
+                mode="determinate"
+                [value]="ProfileObject[selectedIndex].tasks.completed / ProfileObject[selectedIndex].tasks.total * 100">
+              </mat-progress-bar>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>

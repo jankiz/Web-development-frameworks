@@ -1,0 +1,182 @@
+.task-card {
+  width: 800px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+mat-card-header {
+  padding: 16px 16px 0 16px;
+}
+
+mat-card-title {
+  font-size: 20px;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.task-input {
+  flex: 2;
+}
+
+.priority-select, .date-picker {
+  flex: 1;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.add-button {
+  margin-top: 4px;
+  height: 56px;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.task-table {
+  width: 100%;
+  min-width: 650px;
+}
+
+th.mat-header-cell {
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.mat-row:hover {
+  background-color: #f9f9f9;
+}
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task-description {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.priority-chip {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 13px;
+  border: 1px solid;
+}
+
+.priority-chip.high {
+  color: #d32f2f;
+  background-color: rgba(211, 47, 47, 0.08);
+  border-color: rgba(211, 47, 47, 0.2);
+}
+
+.priority-chip.medium {
+  color: #ed6c02;
+  background-color: rgba(237, 108, 2, 0.08);
+  border-color: rgba(237, 108, 2, 0.2);
+}
+
+.priority-chip.low {
+  color: #2e7d32;
+  background-color: rgba(46, 125, 50, 0.08);
+  border-color: rgba(46, 125, 50, 0.2);
+}
+
+.mat-column-status {
+  width: 70px;
+}
+
+.mat-column-priority {
+  width: 120px;
+  text-align: center;
+}
+
+.mat-column-dueDate {
+  width: 120px;
+}
+
+.mat-column-actions {
+  width: 70px;
+  text-align: center;
+}
+
+@media (max-width: 850px) {
+  .task-card {
+    width: 95%;
+  }
+  
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .task-input, .priority-select, .date-picker {
+    width: 100%;
+  }
+  
+  .add-button {
+    width: 100%;
+  }
+  
+  .task-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .mat-column-name {
+    min-width: 200px;
+  }
+  
+  .task-description {
+    white-space: normal;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .task-table {
+    font-size: 14px;
+  }
+  
+  .mat-header-cell, .mat-cell {
+    padding: 8px 4px;
+  }
+  
+  .priority-chip {
+    padding: 2px 8px;
+    font-size: 11px;
+  }
+  
+  .mat-column-name {
+    min-width: 150px;
+  }
+  
+  .task-description {
+    max-width: 150px;
+  }
+}

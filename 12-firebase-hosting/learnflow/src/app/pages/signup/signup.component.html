@@ -1,0 +1,73 @@
+<div class="signup-container">
+  <h1>Create Account</h1>
+  
+  @if (isLoading) {
+    <div class="loading-container">
+      <h2>Registration in progress</h2>
+      <mat-spinner diameter="50"></mat-spinner>
+      <p>Please wait...</p>
+    </div>
+  }
+  
+  @if (showForm) {
+    <form [formGroup]="signUpForm" (ngSubmit)="signup()" class="signup-form">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email">
+        <mat-icon matSuffix>email</mat-icon>
+        @if (signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched) {
+          <mat-error>Please enter a valid email address</mat-error>
+        }
+      </mat-form-field>
+      
+      <div class="name-row" formGroupName="name">
+        <mat-form-field appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstname">
+          <mat-icon matSuffix>person</mat-icon>
+          @if (signUpForm.get('name.firstname')?.invalid && signUpForm.get('name.firstname')?.touched) {
+            <mat-error>First name must be at least 2 characters</mat-error>
+          }
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastname">
+          <mat-icon matSuffix>person</mat-icon>
+          @if (signUpForm.get('name.lastname')?.invalid && signUpForm.get('name.lastname')?.touched) {
+            <mat-error>Last name must be at least 2 characters</mat-error>
+          }
+        </mat-form-field>
+      </div>
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password">
+        <mat-icon matSuffix>lock</mat-icon>
+        @if (signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched) {
+          <mat-error>Password must be at least 6 characters long</mat-error>
+        }
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password" formControlName="rePassword">
+        <mat-icon matSuffix>lock</mat-icon>
+        @if (signUpForm.get('rePassword')?.value !== signUpForm.get('password')?.value) {
+          <mat-error>Passwords do not match</mat-error>
+        }
+      </mat-form-field>
+      
+      @if (signupError) {
+        <div class="error-message">
+          {{ signupError }}
+        </div>
+      }
+      
+      <div class="buttons-row">
+        <button mat-flat-button color="primary" type="submit" [disabled]="signUpForm.invalid">Register</button>
+        <button mat-flat-button [routerLink]="['/login']">Already have an account?</button>
+      </div>
+    </form>
+  }
+</div>

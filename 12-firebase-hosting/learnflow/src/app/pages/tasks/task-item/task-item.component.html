@@ -1,0 +1,21 @@
+<tr mat-row>
+  <td mat-cell>
+    <mat-checkbox 
+      [checked]="task.completed" 
+      (change)="toggleComplete()" 
+      color="primary">
+    </mat-checkbox>
+  </td>
+  <td mat-cell [class.completed]="task.completed">{{ task.name }}</td>
+  <td mat-cell>
+    <mat-chip>
+      {{ task.priority }}
+    </mat-chip>
+  </td>
+  <td mat-cell>{{ task.dueDate | date }}</td>
+  <td mat-cell>
+    <button mat-icon-button color="primary" aria-label="Edit task">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </td>
+</tr>

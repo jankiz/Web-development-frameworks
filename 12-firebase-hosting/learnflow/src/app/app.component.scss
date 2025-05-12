@@ -1,0 +1,50 @@
+nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    gap: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
+mat-sidenav-container {
+    height: 100%;
+}
+
+mat-toolbar{
+    background-color: #005cbb;
+    color: white;
+    mat-icon {
+        color: white;
+    }
+}
+
+mat-sidenav {
+    border-radius: 0;
+}
+
+.menu-toggle-button {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle-button {
+        display: block;
+    }
+    
+    nav ul {
+        display: none;
+    }
+}
